@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'org.example'
+version = '1.0'
+
+sourceCompatibility = '17' // или 11, если используешь другую версию JDK
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.microsoft.playwright:playwright:1.44.0' // проверь актуальную версию
+
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+application {
+    mainClass = 'org.example.MyPlaywrightTest' // укажи свой основной класс с методом main
+}
